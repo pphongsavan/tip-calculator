@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.highlight {
+  background-color: greenyellow;
+}
+
+.amounts-table {
+  width: 100%;
+  font-size: 2rem;
+  user-select: none;
+}
