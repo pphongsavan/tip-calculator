@@ -10,7 +10,7 @@ const AddAmount = ({ onAdd, subtotal, percent, tipAmount, setSubtotal, setPercen
             // Sub is filled, but percent AND tip are blank
             // All fields are filled
         if((!subtotal) || (subtotal && percent && tipAmount) || (subtotal && !percent && !tipAmount)) {
-            alert('Please make sure Subtotal AND either Percent and Tip Amount are filled. \nForm will not accept if all fields are filled.')
+            alert('Please make sure Subtotal and either Percent and Tip are filled. \n\nForm will not accept if all fields are filled.')
             return
         }
 
