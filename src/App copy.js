@@ -5,9 +5,11 @@ import Header from './components/Header';
 import Instructions from './components/Instructions';
 import Amounts from './components/Amounts';
 import AddAmount from './components/AddAmount';
-
+import Button from './components/Button';
+import { isCompositeComponent } from 'react-dom/test-utils';
 
 function App() {
+  const startingPercents = [8, 10, 15, 20];
 
   const [amounts, setAmounts] = useState([
     // {
@@ -43,9 +45,8 @@ function App() {
     //     highlight: false
     // },
 ])
-const [subtotal, setSubtotal] = useState('')
-const [percent, setPercent] = useState('')
-const [tipAmount, setTipAmount] = useState('')
+
+const [redo, setRedo] = useState('');
 
 
   // Add Amount
@@ -71,7 +72,6 @@ const [tipAmount, setTipAmount] = useState('')
     const newAmount = { id, ...amount }
     //setPrevious([newAmount])
     setAmounts([...amounts, newAmount])
-
 }
 
 
@@ -82,7 +82,7 @@ const [tipAmount, setTipAmount] = useState('')
 
   // Toggle Highlight
   const toggleHighlight = (id) => {
-    // console.log(id)
+    console.log(id)
     setAmounts(amounts.map((amount) => 
     amount.id === id ? { ...amount, highlight: !amount.highlight } : amount
     ))
@@ -92,31 +92,18 @@ const [tipAmount, setTipAmount] = useState('')
   //Redo 
   const refill = (id) => {
     console.log(id)
-    const toRedo = (amounts.find((amount) => amount.id === id))
-    refillForm(toRedo)
+    setRedo(amounts.find((amount) => amount.id === id))
+    console.log(redo)
 
-  }
-
-  // Fill form with subtotal
-  const refillForm = (amt) => {
-      setSubtotal(amt.subtotal)
-      // setPercent(amt.percent)
-      // setTipAmount(amt.tipAmount)
   }
 
   return (
-    <div className="App container">
+    <div className="App">
       <Header />
       <Instructions />
       <AddAmount 
         amounts={amounts}
         onAdd={addAmount}
-        subtotal={subtotal}
-        percent={percent}
-        tipAmount={tipAmount}
-        setSubtotal={setSubtotal}
-        setPercent={setPercent}
-        setTipAmount={setTipAmount}
         />
       {amounts.length > 0 ? (
         <Amounts 

@@ -1,10 +1,12 @@
 
 const Instructions = () => {
   return (
-    <div>
-      <p>
-          Enter fields and click "Calculate".
-          A new row will appear under "Custom Amounts".
+    <div className="container instructions;">
+      <p className="instr-txt">
+          Fill Subtotal and Tip to get Percent.
+          <br></br>
+          Fill Subtotal and Percent to get TIp.
+          <br></br>
           Double-tap a row to highlight.
       </p>
     </div>

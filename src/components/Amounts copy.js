@@ -9,7 +9,7 @@ const Amounts = ({ amounts, onDelete, onToggle, onRefill }) => {
             <tr>
                 <th>Percent (%)</th>
                 <th>Subtotal ($)</th>
-                <th>Tip ($)</th>
+                <th>Tip Amount ($)</th>
                 <th>Total ($)</th>
             </tr>
             {amounts.map((amount) => (

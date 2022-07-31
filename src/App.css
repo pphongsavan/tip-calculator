@@ -1,16 +1,6 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  justify-content: center;
 }
 
 .App-header {
@@ -28,21 +18,37 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .highlight {
-  background-color: greenyellow;
+  background-color: rgb(255, 253, 113);
 }
 
-.amounts-table {
-  width: 100%;
-  font-size: 2rem;
-  user-select: none;
+
+.form-item {
+  margin: 4px;
 }
+
+.wide-btn {
+  width: 100%
+}
+
+.instructions {
+  align-items: center;
+}
+
+.instr-txt {
+  font-size: .9rem;
+  display: inline-block;
+  text-align: left;
+}
+
+
+.text-form {
+  text-align: left;
+}
+
+
+/* .amounts-table {
+  width: 100%;
+  font-size: 1rem;
+  user-select: none;
+} */

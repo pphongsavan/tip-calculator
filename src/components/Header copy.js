@@ -2,7 +2,7 @@
 const Header = () => {
   return (
     <div>
-      <h4 className="header">Tip Calculator</h4>
+      <h1 className="header">Tip Calculator</h1>
     </div>
   )
 }
