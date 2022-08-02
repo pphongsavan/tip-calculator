@@ -5,7 +5,7 @@ const Instructions = () => {
       <p className="instr-txt">
           Fill Subtotal and Tip to get Percent.
           <br></br>
-          Fill Subtotal and Percent to get TIp.
+          Fill Subtotal and Percent to get Tip.
           <br></br>
           Double-tap a row to highlight.
       </p>
