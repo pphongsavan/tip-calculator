@@ -42,7 +42,7 @@ const AddAmount = ({ onAdd, subtotal, percent, tipAmount, setSubtotal, setPercen
       }
 
   return (
-    <form className='add-form container' onSubmit={onSubmit}>
+    <form className='add-form container-fluid' onSubmit={onSubmit}>
       <div className="row justify-content-center">
         <div className="col-7 col-md-5 form-item text-form">
           <label htmlFor='subtotalInput'>Subtotal *</label>

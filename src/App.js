@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Instructions from './components/Instructions';
 import Amounts from './components/Amounts';
 import AddAmount from './components/AddAmount';
-
+import Footer from './components/Footer';
 
 function App() {
 
@@ -14,7 +14,6 @@ const [subtotal, setSubtotal] = useState('')
 const [percent, setPercent] = useState('')
 const [tipAmount, setTipAmount] = useState('')
 
-
   // Add Amount
   const addAmount = (amount) => {
     const id = amounts.length + 1
@@ -22,8 +21,7 @@ const [tipAmount, setTipAmount] = useState('')
     const newAmount = { id, ...amount }
     setAmounts([...amounts, newAmount])
 
-}
-
+  }
 
   // Delete Amount
   const deleteAmount = (id) => {
@@ -49,12 +47,10 @@ const [tipAmount, setTipAmount] = useState('')
   // Fill form with subtotal
   const refillForm = (amt) => {
       setSubtotal(amt.subtotal)
-      // setPercent(amt.percent)
-      // setTipAmount(amt.tipAmount)
   }
 
   return (
-    <div className="App container">
+    <div className="App container-fluid p-0">
       <Header />
       <Instructions />
       <AddAmount 
@@ -75,7 +71,7 @@ const [tipAmount, setTipAmount] = useState('')
         onRefill={refill}
         />
       ) : ('')}
-
+      <Footer />
     </div>
   );
 }

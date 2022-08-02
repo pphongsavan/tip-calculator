@@ -1,7 +1,7 @@
 
 const Instructions = () => {
   return (
-    <div className="container instructions;">
+    <div className="container-fluid instructions;">
       <p className="instr-txt">
           Fill Subtotal and Tip to get Percent.
           <br></br>

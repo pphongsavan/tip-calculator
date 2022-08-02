@@ -1,9 +1,6 @@
 import { TiDelete } from 'react-icons/ti'
 import { CgRedo } from 'react-icons/cg'
 
-
-
-
 const Amount = ({ amount, onDelete, onToggle, onRefill,  }) => {
 
   return (
@@ -14,6 +11,7 @@ const Amount = ({ amount, onDelete, onToggle, onRefill,  }) => {
         <td>{amount.total}</td>
         <td>
             <TiDelete 
+                title="Delete Row"
                 icon='fa-2x'
                 style={{
                     color: 'red', 
@@ -24,6 +22,7 @@ const Amount = ({ amount, onDelete, onToggle, onRefill,  }) => {
         </td>
         <td>
             <CgRedo 
+                title="Refill Subtotal"
                 icon='fa-2x'
                 style={{
                     color: 'blue', 
