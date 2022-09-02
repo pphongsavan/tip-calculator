@@ -43,8 +43,22 @@
 }
 
 
-.text-form {
+.align-left {
   text-align: left;
+}
+
+.form-item {
+  margin-top: 10px;
+}
+
+.grand-to-split {
+  text-align: center;
+  margin: auto;
+
+}
+
+span.grand-total {
+  font-size: 1.25rem;
 }
 
 .footer {
@@ -60,11 +74,10 @@
   color: rgb(255, 237, 237);
 }
 
+td.icons {
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
 
-
-
-/* .amounts-table {
-  width: 100%;
-  font-size: 1rem;
-  user-select: none;
-} */
+  @media (max-width: 720px) { font-size: 1rem; }
+}

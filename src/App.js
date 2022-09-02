@@ -1,59 +1,86 @@
-import './App.css';
-import { useState } from "react"
+import "./App.css";
+import { useState } from "react";
 
-import Header from './components/Header';
-import Instructions from './components/Instructions';
-import Amounts from './components/Amounts';
-import AddAmount from './components/AddAmount';
-import Footer from './components/Footer';
+import Header from "./components/Header";
+import Instructions from "./components/Instructions";
+import Amounts from "./components/Amounts";
+import AddAmount from "./components/AddAmount";
+import CalculateTax from "./components/CalculateTax";
+// import Footer from "./components/Footer";
+import SplitBill from "./components/SplitBill";
+import { BsArrowRightSquare } from "react-icons/bs";
 
 function App() {
-
-const [amounts, setAmounts] = useState([])
-const [subtotal, setSubtotal] = useState('')
-const [percent, setPercent] = useState('')
-const [tipAmount, setTipAmount] = useState('')
+  const [amounts, setAmounts] = useState([]);
+  const [subtotal, setSubtotal] = useState("");
+  const [percent, setPercent] = useState("");
+  const [tipAmount, setTipAmount] = useState("");
+  const [tax, setTax] = useState("");
+  const [taxSubTotal, setTaxSubtotal] = useState("");
+  const [grandTotal, setGrandTotal] = useState("");
+  const [totalToSplit, setTotalToSplit] = useState("");
 
   // Add Amount
   const addAmount = (amount) => {
-    const id = amounts.length + 1
+    const id = amounts.length + 1;
     console.log(amount);
-    const newAmount = { id, ...amount }
-    setAmounts([...amounts, newAmount])
+    const newAmount = { id, ...amount };
+    setAmounts([...amounts, newAmount]);
+  };
 
-  }
+  const addTax = (taxSubTotal, tax) => {};
 
   // Delete Amount
   const deleteAmount = (id) => {
-    setAmounts(amounts.filter((amount) => amount.id !== id))
-  }
+    setAmounts(amounts.filter((amount) => amount.id !== id));
+  };
 
   // Toggle Highlight
   const toggleHighlight = (id) => {
-    setAmounts(amounts.map((amount) => 
-    amount.id === id ? { ...amount, highlight: !amount.highlight } : amount
-    ))
-  }
+    setAmounts(
+      amounts.map((amount) =>
+        amount.id === id ? { ...amount, highlight: !amount.highlight } : amount
+      )
+    );
+    fillTaxSubtotal(id);
+  };
 
-
-  //Redo 
+  //Redo
   const refill = (id) => {
-    console.log(id)
-    const toRedo = (amounts.find((amount) => amount.id === id))
-    refillForm(toRedo)
+    const toRedo = amounts.find((amount) => amount.id === id);
+    refillForm(toRedo);
+  };
 
-  }
+  // Fill tax form with subtotal
+  const fillTaxSubtotal = (id) => {
+    const toFill = amounts.find((amount) => amount.id === id);
+    fillTax(toFill);
+  };
 
   // Fill form with subtotal
   const refillForm = (amt) => {
-      setSubtotal(amt.subtotal)
-  }
+    setSubtotal(amt.subtotal);
+  };
+
+  // Fill tax for with subtotal
+  const fillTax = (amt) => {
+    setTaxSubtotal(amt.total);
+  };
+
+  const fillSplitBill = () => {
+    if (!grandTotal) {
+      alert(
+        "Grand Total hasn't been calculated yet. Use the Tax form to calculate Grand Total."
+      );
+    }
+    setTotalToSplit(grandTotal);
+  };
 
   return (
-    <div className="App container-fluid p-0">
+    <div className="App container p-0">
       <Header />
       <Instructions />
-      <AddAmount 
+      <AddAmount
         amounts={amounts}
         onAdd={addAmount}
         subtotal={subtotal}
@@ -62,16 +89,52 @@ const [tipAmount, setTipAmount] = useState('')
         setSubtotal={setSubtotal}
         setPercent={setPercent}
         setTipAmount={setTipAmount}
-        />
+      />
       {amounts.length > 0 ? (
-        <Amounts 
-        amounts={amounts} 
-        onDelete={deleteAmount}
-        onToggle={toggleHighlight}
-        onRefill={refill}
+        <Amounts
+          amounts={amounts}
+          onDelete={deleteAmount}
+          onToggle={toggleHighlight}
+          onRefill={refill}
+          onFillTaxSub={fillTaxSubtotal}
         />
-      ) : ('')}
-      <Footer />
+      ) : (
+        ""
+      )}
+      <div className="row">
+        <div className="col-5">
+          <CalculateTax
+            tax={tax}
+            taxSubTotal={taxSubTotal}
+            setTax={setTax}
+            setTaxSubtotal={setTaxSubtotal}
+            onAdd={addTax}
+            grandTotal={grandTotal}
+            setGrandTotal={setGrandTotal}
+          />
+        </div>
+
+        <div className="grand-to-split col-1">
+          <BsArrowRightSquare
+            title="Copy Grand Total to Split Bill form"
+            size="3em"
+            style={{
+              color: "blue",
+              cursor: "pointer",
+            }}
+            onClick={() => fillSplitBill()}
+          />
+        </div>
+
+        <div className="col-5">
+          <SplitBill
+            totalToSplit={totalToSplit}
+            setTotalToSplit={setTotalToSplit}
+          />
+        </div>
+      </div>
+
+      {/* <Footer /> */}
     </div>
   );
 }
