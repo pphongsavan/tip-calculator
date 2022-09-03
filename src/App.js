@@ -119,7 +119,7 @@ function App() {
               title="Copy Grand Total to Split Bill form"
               size="3em"
               style={{
-                color: "blue",
+                color: "green",
                 cursor: "pointer",
               }}
               onClick={() => fillSplitBill()}

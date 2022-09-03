@@ -53,7 +53,7 @@ const CalculateTax = ({
         ""
       )}
       <div className="form-item">
-        <input type="submit" className="btn btn-primary" value="Add Tax" />
+        <input type="submit" className="btn btn-success" value="Add Tax" />
       </div>
     </form>
   );

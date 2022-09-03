@@ -109,7 +109,7 @@ const AddAmount = ({
       <div className="form-item justify-content-center">
         <input
           type="submit"
-          className="btn btn-outline-primary btn-lg p-3 col-7 col-md-3 col-lg-2"
+          className="btn btn-outline-success btn-lg p-3 col-7 col-md-3 col-lg-2"
           value="Calculate"
         />
       </div>

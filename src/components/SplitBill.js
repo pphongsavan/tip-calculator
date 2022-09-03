@@ -56,7 +56,7 @@ const SplitBill = ({ totalToSplit, setTotalToSplit }) => {
       <div className="form-item">
         <input
           type="submit"
-          className="btn btn-primary"
+          className="btn btn-success"
           value="Calculate Split"
         />
       </div>
