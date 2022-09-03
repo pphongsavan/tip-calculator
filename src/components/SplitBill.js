@@ -7,7 +7,7 @@ const SplitBill = ({ totalToSplit, setTotalToSplit }) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    if (!splitTotal || !numOfPeople) {
+    if (!totalToSplit || !numOfPeople) {
       alert("Please make sure Grand Total and # of People are filled");
       return;
     }
@@ -16,7 +16,6 @@ const SplitBill = ({ totalToSplit, setTotalToSplit }) => {
       parseFloat(totalToSplit) / parseInt(numOfPeople)
     ).toFixed(2);
     setSplitTotal(newSplitTotal);
-    console.log(newSplitTotal);
   };
 
   return (

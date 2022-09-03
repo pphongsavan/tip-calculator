@@ -6,7 +6,6 @@ import Instructions from "./components/Instructions";
 import Amounts from "./components/Amounts";
 import AddAmount from "./components/AddAmount";
 import CalculateTax from "./components/CalculateTax";
-// import Footer from "./components/Footer";
 import SplitBill from "./components/SplitBill";
 import { BsArrowRightSquare } from "react-icons/bs";
 
@@ -77,64 +76,66 @@ function App() {
   };
 
   return (
-    <div className="App container p-0">
+    <div>
       <Header />
-      <Instructions />
-      <AddAmount
-        amounts={amounts}
-        onAdd={addAmount}
-        subtotal={subtotal}
-        percent={percent}
-        tipAmount={tipAmount}
-        setSubtotal={setSubtotal}
-        setPercent={setPercent}
-        setTipAmount={setTipAmount}
-      />
-      {amounts.length > 0 ? (
-        <Amounts
+      <div className="App container">
+        <Instructions />
+        <AddAmount
           amounts={amounts}
-          onDelete={deleteAmount}
-          onToggle={toggleHighlight}
-          onRefill={refill}
-          onFillTaxSub={fillTaxSubtotal}
+          onAdd={addAmount}
+          subtotal={subtotal}
+          percent={percent}
+          tipAmount={tipAmount}
+          setSubtotal={setSubtotal}
+          setPercent={setPercent}
+          setTipAmount={setTipAmount}
         />
-      ) : (
-        ""
-      )}
-      <div className="row">
-        <div className="col-5">
-          <CalculateTax
-            tax={tax}
-            taxSubTotal={taxSubTotal}
-            setTax={setTax}
-            setTaxSubtotal={setTaxSubtotal}
-            onAdd={addTax}
-            grandTotal={grandTotal}
-            setGrandTotal={setGrandTotal}
+        {amounts.length > 0 ? (
+          <Amounts
+            amounts={amounts}
+            onDelete={deleteAmount}
+            onToggle={toggleHighlight}
+            onRefill={refill}
+            onFillTaxSub={fillTaxSubtotal}
           />
+        ) : (
+          ""
+        )}
+        <div className="row">
+          <div className="col-5">
+            <CalculateTax
+              tax={tax}
+              taxSubTotal={taxSubTotal}
+              setTax={setTax}
+              setTaxSubtotal={setTaxSubtotal}
+              onAdd={addTax}
+              grandTotal={grandTotal}
+              setGrandTotal={setGrandTotal}
+            />
+          </div>
+
+          <div className="grand-to-split col-1">
+            <BsArrowRightSquare
+              title="Copy Grand Total to Split Bill form"
+              size="3em"
+              style={{
+                color: "blue",
+                cursor: "pointer",
+              }}
+              onClick={() => fillSplitBill()}
+            />
+          </div>
+
+          <div className="col-5">
+            <SplitBill
+              totalToSplit={totalToSplit}
+              setTotalToSplit={setTotalToSplit}
+            />
+          </div>
         </div>
 
-        <div className="grand-to-split col-1">
-          <BsArrowRightSquare
-            title="Copy Grand Total to Split Bill form"
-            size="3em"
-            style={{
-              color: "blue",
-              cursor: "pointer",
-            }}
-            onClick={() => fillSplitBill()}
-          />
-        </div>
-
-        <div className="col-5">
-          <SplitBill
-            totalToSplit={totalToSplit}
-            setTotalToSplit={setTotalToSplit}
-          />
-        </div>
+        {/* <Footer /> */}
       </div>
-
-      {/* <Footer /> */}
     </div>
   );
 }
