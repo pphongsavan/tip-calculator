@@ -29,9 +29,10 @@ const AddAmount = ({
 
     // Sub is filled
     if (subtotal) {
+      const newSubtotal = parseFloat(subtotal).toFixed(2);
+
       // Sub and percent is filled
       if (percent && !tipAmount) {
-        const newSubtotal = parseFloat(subtotal).toFixed(2);
         const newPercent = parseInt(percent);
         const newTipAmount = parseFloat(subtotal * (percent / 100)).toFixed(2);
         const newTotal = (
@@ -46,7 +47,6 @@ const AddAmount = ({
       }
       // Sub and tip amount is filled
       else if (!percent && tipAmount) {
-        const newSubtotal = parseFloat(subtotal).toFixed(2);
         const newTipAmount = parseFloat(tipAmount).toFixed(2);
         const newPercent = Math.round((tipAmount / subtotal) * 100);
         const newTotal = (

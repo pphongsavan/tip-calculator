@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState } from "react";
+import { BsArrowRightSquare } from "react-icons/bs";
 
 import Header from "./components/Header";
 import Instructions from "./components/Instructions";
@@ -7,7 +8,6 @@ import Amounts from "./components/Amounts";
 import AddAmount from "./components/AddAmount";
 import CalculateTax from "./components/CalculateTax";
 import SplitBill from "./components/SplitBill";
-import { BsArrowRightSquare } from "react-icons/bs";
 
 function App() {
   const [amounts, setAmounts] = useState([]);
@@ -102,7 +102,7 @@ function App() {
           ""
         )}
         <div className="row">
-          <div className="col-5">
+          <div className="col-10 col-sm-5">
             <CalculateTax
               tax={tax}
               taxSubTotal={taxSubTotal}
@@ -114,7 +114,7 @@ function App() {
             />
           </div>
 
-          <div className="grand-to-split col-1">
+          <div className="grand-to-split col-10 col-sm-2">
             <BsArrowRightSquare
               title="Copy Grand Total to Split Bill form"
               size="3em"
@@ -126,7 +126,7 @@ function App() {
             />
           </div>
 
-          <div className="col-5">
+          <div className="col-10 col-sm-5">
             <SplitBill
               totalToSplit={totalToSplit}
               setTotalToSplit={setTotalToSplit}

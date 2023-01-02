@@ -38,7 +38,6 @@
 .grand-to-split {
   text-align: center;
   margin: auto;
-
 }
 
 span.grand-total {
@@ -71,4 +70,12 @@ td.icons {
 
 .split-bill {
   margin-top: 48px;
+}
+
+@media (max-width: 768px) {
+  .grand-to-split {
+    margin: 0%;
+    margin-top: 35px;
+  }
+  
 }
