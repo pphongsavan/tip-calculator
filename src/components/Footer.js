@@ -1,7 +1,7 @@
 const Footer = () => {
     return(
     <div 
-        className="footer container-fluid"
+        className="footer"
     > 
             &nbsp;Made by <a href="https://github.com/pphongsavan">Prin Phongsavan</a>.
     </div>

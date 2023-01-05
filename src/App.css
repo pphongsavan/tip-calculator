@@ -1,81 +1,9 @@
 .App {
-  text-align: center;
-  justify-content: center;
+  /* text-align: center;
+  justify-content: center; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  min-height: 100vh;
-}
-
-.header {
-  padding-left: 32px;
 }
 
 .highlight {
   background-color: rgb(255, 253, 113);
-}
-
-.form-item {
-  margin-top: 10px;
-}
-
-.instructions {
-  margin-top: 64px;
-}
-
-.amounts-table {
-  margin-top: 64px;
-}
-
-.instr-txt {
-  font-size: .9rem;
-  display: inline-block;
-  text-align: left;
-}
-
-.align-left {
-  text-align: left;
-}
-
-.grand-to-split {
-  text-align: center;
-  margin: auto;
-}
-
-span.grand-total {
-  font-size: 1.25rem;
-}
-
-.footer {
-  background-color: #333;
-  clear: both;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: auto;
-  padding: 10px;
-  color: rgb(255, 237, 237);
-}
-
-td.icons {
-  font-size: 1.5rem;
-  padding: 0;
-  margin: 0;
-
-}
-
-.add-tax {
-  margin-top: 48px;
-}
-
-.split-bill {
-  margin-top: 48px;
-}
-
-@media (max-width: 768px) {
-  .grand-to-split {
-    margin: 0%;
-    margin-top: 35px;
-  }
-  
 }

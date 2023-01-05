@@ -1,6 +1,6 @@
 const Instructions = () => {
   return (
-    <div className="container-fluid instructions">
+    <div className="">
       <p className="instr-txt">
         <b className="how-to">How to Use:</b>
         <br></br>

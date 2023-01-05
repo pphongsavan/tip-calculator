@@ -67,38 +67,38 @@ const AddAmount = ({
   };
 
   return (
-    <form className="add-form container" onSubmit={onSubmit}>
-      <div className="row justify-content-center">
-        <div className="col-7 col-md-5 form-item align-left">
+    <form className="" onSubmit={onSubmit}>
+      <div className="">
+        <div className="">
           <label htmlFor="subtotalInput">Subtotal *</label>
           <input
             type="number"
             id="subtotalInput"
-            className="form-control"
+            className=""
             placeholder="$ XX.XX"
             value={subtotal}
             onChange={(e) => setSubtotal(e.target.value)}
           />
         </div>
       </div>
-      <div className="row justify-content-center">
-        <div className="col-3 col-md-2 form-item align-left">
+      <div className="">
+        <div className="">
           <label htmlFor="percentInput">Percent</label>
           <input
             type="number"
             id="percentInput"
-            className="form-control"
+            className=""
             placeholder="XX %"
             value={percent}
             onChange={(e) => setPercent(e.target.value)}
           />
         </div>
-        <div className="col-4 col-md-3 form-item align-left">
+        <div className="">
           <label htmlFor="tipAmountInput">Tip</label>
           <input
             type="number"
             id="tipAmountInput"
-            className="form-control"
+            className=""
             placeholder="$ XX.XX"
             value={tipAmount}
             onChange={(e) => setTipAmount(e.target.value)}
@@ -106,10 +106,10 @@ const AddAmount = ({
         </div>
       </div>
 
-      <div className="form-item justify-content-center">
+      <div className="">
         <input
           type="submit"
-          className="btn btn-outline-success btn-lg p-3 col-7 col-md-3 col-lg-2"
+          className=""
           value="Calculate"
         />
       </div>

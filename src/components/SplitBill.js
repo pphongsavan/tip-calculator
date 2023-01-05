@@ -19,27 +19,27 @@ const SplitBill = ({ totalToSplit, setTotalToSplit }) => {
   };
 
   return (
-    <form className="split-bill container" onSubmit={onSubmit}>
-      <div className="row align-left">
+    <form className="split-bill" onSubmit={onSubmit}>
+      <div className="">
         <h3>Split the Bill</h3>
       </div>
-      <div className="row form-item col-12 col-lg-6 align-left">
+      <div className="">
         <label htmlFor="splitTotalInput">Grand Total *</label>
         <input
           type="number"
           id="splitTotalInput"
-          className="form-control"
+          className=""
           placeholder="$ XX.XX"
           value={totalToSplit}
           onChange={(e) => setTotalToSplit(e.target.value)}
         />
       </div>
-      <div className="row form-item col-12 col-lg-4 align-left">
+      <div className="">
         <label htmlFor="numPeopleInput"># of People *</label>
         <input
           type="number"
           id="numPeopleInput"
-          className="form-control"
+          className=""
           placeholder="X"
           value={numOfPeople}
           onChange={(e) => setNumOfPeople(e.target.value)}
@@ -53,10 +53,10 @@ const SplitBill = ({ totalToSplit, setTotalToSplit }) => {
       ) : (
         ""
       )}
-      <div className="form-item">
+      <div className="">
         <input
           type="submit"
-          className="btn btn-success"
+          className=""
           value="Calculate Split"
         />
       </div>

@@ -1,62 +1,55 @@
-const CalculateTax = ({
-  tax,
-  taxSubTotal,
-  setTax,
-  setTaxSubtotal,
-  grandTotal,
-  setGrandTotal,
-}) => {
-  const onSubmit = (e) => {
-    e.preventDefault();
+const CalculateTax = ({ tax, taxSubTotal, setTax, setTaxSubtotal, grandTotal, setGrandTotal }) => {
+	const handleChange = (e) => {
+		const value = e.target.value;
 
-    if (!tax || !taxSubTotal) {
-      alert("Please make sure Total and Tax are filled");
-      return;
-    }
-    const newGrand = (parseFloat(tax) + parseFloat(taxSubTotal)).toFixed(2);
-    setGrandTotal(newGrand);
-    console.log(grandTotal);
-  };
+		switch (e.target.id) {
+			case 'taxInput':
+				setTax(value);
+				break;
+			case 'taxSubInput':
+				setTaxSubtotal(value);
+		}
 
-  return (
-    <form className="add-tax container" onSubmit={onSubmit}>
-      <div className="row align-left">
-        <h3>Tax</h3>
-      </div>
-      <div className="row col-md-6 col-12 form-item align-left">
-        <label htmlFor="taxSubInput">Total *</label>
-        <input
-          type="number"
-          id="taxSubInput"
-          className="form-control"
-          placeholder="$ XX.XX"
-          value={taxSubTotal}
-          onChange={(e) => setTaxSubtotal(e.target.value)}
-        />
-      </div>
-      <div className="row col-md-6 col-12 form-item align-left">
-        <label htmlFor="taxInput">Tax *</label>
-        <input
-          type="number"
-          id="taxInput"
-          className="form-control"
-          placeholder="$ XX.XX"
-          value={tax}
-          onChange={(e) => setTax(e.target.value)}
-        />
-      </div>
-      {grandTotal ? (
-        <span className="grand-total">
-          Grand Total: <b>${grandTotal}</b>
-        </span>
-      ) : (
-        ""
-      )}
-      <div className="form-item">
-        <input type="submit" className="btn btn-success" value="Add Tax" />
-      </div>
-    </form>
-  );
+		if (tax && taxSubTotal) {
+			setGrandTotal((parseFloat(tax) + parseFloat(taxSubTotal)).toFixed(2));
+		}
+	};
+	return (
+		<form className="add-tax">
+			<div className="">
+				<h3>Tax</h3>
+			</div>
+			<div className="">
+				<label htmlFor="taxSubInput">Total *</label>
+				<input
+					type="number"
+					id="taxSubInput"
+					className=""
+					placeholder="$ XX.XX"
+					value={taxSubTotal}
+					onChange={handleChange}
+				/>
+			</div>
+			<div className="">
+				<label htmlFor="taxInput">Tax *</label>
+				<input
+					type="number"
+					id="taxInput"
+					className=""
+					placeholder="$ XX.XX"
+					value={tax}
+					onChange={handleChange}
+				/>
+			</div>
+			{grandTotal ? (
+				<span className="">
+					Grand Total: <b>${grandTotal}</b>
+				</span>
+			) : (
+				<span className="">Not yet calculated. Fill Total and Tax above</span>
+			)}
+		</form>
+	);
 };
 
 export default CalculateTax;
