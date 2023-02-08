@@ -1,7 +1,9 @@
 const Header = () => {
   return (
-    <nav className="">
-      <span className="">Tip Calculator</span>
+    <nav className="navbar navbar-dark bg-dark mb-3">
+      <div className="container-fluid">
+        <span className="navbar-brand">PTP Calculators</span>
+      </div>
     </nav>
   );
 };

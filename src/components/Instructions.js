@@ -1,6 +1,7 @@
 const Instructions = () => {
   return (
     <div className="">
+      <h2>Tip Calculator</h2>
       <p className="instr-txt">
         <b className="how-to">How to Use:</b>
         <br></br>

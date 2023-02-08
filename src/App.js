@@ -1,6 +1,5 @@
 import "./App.css";
 import { useState } from "react";
-import { BsArrowRightSquare } from "react-icons/bs";
 
 import Header from "./components/Header";
 import Instructions from "./components/Instructions";
@@ -8,6 +7,8 @@ import Amounts from "./components/Amounts";
 import AddAmount from "./components/AddAmount";
 import CalculateTax from "./components/CalculateTax";
 import SplitBill from "./components/SplitBill";
+import Footer from "./components/Footer";
+import { TbArrowBigDownLines, TbCircle1, TbCircle2 } from "react-icons/tb";
 
 function App() {
   const [amounts, setAmounts] = useState([]);
@@ -19,22 +20,16 @@ function App() {
   const [grandTotal, setGrandTotal] = useState("");
   const [totalToSplit, setTotalToSplit] = useState("");
 
-  // Add Amount
   const addAmount = (amount) => {
     const id = amounts.length + 1;
-    console.log(amount);
     const newAmount = { id, ...amount };
     setAmounts([...amounts, newAmount]);
   };
 
-  const addTax = (taxSubTotal, tax) => {};
-
-  // Delete Amount
   const deleteAmount = (id) => {
     setAmounts(amounts.filter((amount) => amount.id !== id));
   };
 
-  // Toggle Highlight
   const toggleHighlight = (id) => {
     setAmounts(
       amounts.map((amount) =>
@@ -44,33 +39,27 @@ function App() {
     fillTaxSubtotal(id);
   };
 
-  //Redo
   const refill = (id) => {
     const toRedo = amounts.find((amount) => amount.id === id);
     refillForm(toRedo);
   };
 
-  // Fill tax form with subtotal
   const fillTaxSubtotal = (id) => {
     const toFill = amounts.find((amount) => amount.id === id);
     fillTax(toFill);
   };
 
-  // Fill form with subtotal
   const refillForm = (amt) => {
     setSubtotal(amt.subtotal);
   };
 
-  // Fill tax for with subtotal
   const fillTax = (amt) => {
     setTaxSubtotal(amt.total);
   };
 
   const fillSplitBill = () => {
     if (!grandTotal) {
-      alert(
-        "Grand Total hasn't been calculated yet. Use the Tax form to calculate Grand Total."
-      );
+      alert("Not calculated yet. Use the Tax form to calculate Grand Total.");
     }
     setTotalToSplit(grandTotal);
   };
@@ -101,32 +90,42 @@ function App() {
         ) : (
           ""
         )}
-        <div className="row">
-          <div className="col-10 col-sm-5">
+        <div id="tax" className="">
+          <div className="">
             <CalculateTax
               tax={tax}
               taxSubTotal={taxSubTotal}
               setTax={setTax}
               setTaxSubtotal={setTaxSubtotal}
-              onAdd={addTax}
               grandTotal={grandTotal}
               setGrandTotal={setGrandTotal}
             />
+            <div className="tax-mid">
+              <div className="total-zone mb-3">
+                <span className="grand-total mb-3">Grand Total:</span>
+
+                {grandTotal ? (
+                  <span className="grand-total-num mb-3">
+                    <b>${grandTotal}</b>
+                  </span>
+                ) : (
+                  <span className="grand-total mb-3">
+                    Not yet calculated. Fill Total and Tax above
+                  </span>
+                )}
+                <button
+                  title="Copy Grand Total to Split Bill form"
+                  className="btn btn-primary btn-lg"
+                  onClick={() => fillSplitBill()}
+                >
+                  <TbArrowBigDownLines />
+                  Copy Grand Total to Step 3
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div className="grand-to-split col-10 col-sm-2">
-            <BsArrowRightSquare
-              title="Copy Grand Total to Split Bill form"
-              size="3em"
-              style={{
-                color: "green",
-                cursor: "pointer",
-              }}
-              onClick={() => fillSplitBill()}
-            />
-          </div>
-
-          <div className="col-10 col-sm-5">
+          <div id="split">
             <SplitBill
               totalToSplit={totalToSplit}
               setTotalToSplit={setTotalToSplit}
@@ -134,7 +133,38 @@ function App() {
           </div>
         </div>
 
-        {/* <Footer /> */}
+        <section className="about">
+          <h4>About This Calculator:</h4>
+          <p>
+            Calculating tips takes too many taps. I wanted to make it as quick
+            as possible.
+          </p>
+          <h5>Why a table?</h5>
+          <p>
+            Ever feel like you're tipping too little? Or can't remember your
+            calculations? With a table, all of your calculations are available
+            for easy comparisons. For repetitive calculations, click the{" "}
+            <TbCircle1 /> icon in a row to re-copy that subtotal to the top
+            form.
+            <br></br>
+            <br></br>I was particularly inspired by an instance where the server
+            was hovering over us as we tried to discuss, and we wanted to make
+            this decision discreetly. So I’ve added the ability to highlight
+            rows by double-tapping so you can easily show your friends which tip
+            you want to go with.
+          </p>
+          <h5>Why is tax a separate step?</h5>
+          <p>
+            Did you know that it's perfectly acceptable to tip based on the
+            pre-tax total? Most tip calculators don't take this into account. So
+            I've made the tax addition a separate step after. For fast
+            calculations, click the <TbCircle2 /> icon in a row to copy the
+            total to this form. Then you can go further and split the bill if
+            needed.
+          </p>
+        </section>
+
+        <Footer />
       </div>
     </div>
   );

@@ -2,9 +2,9 @@ import Amount from "./Amount";
 
 const Amounts = ({ amounts, onDelete, onToggle, onRefill, onFillTaxSub }) => {
   return (
-    <table className="amounts-table table table-hover">
+    <table className="table table-striped table-hover">
       <tbody>
-        <tr>
+        <tr className="table-primary">
           <th>Percent (%)</th>
           <th>Subtotal ($)</th>
           <th>Tip ($)</th>

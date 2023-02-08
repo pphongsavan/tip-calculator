@@ -1,3 +1,5 @@
+import { TbCircle1 } from "react-icons/tb";
+
 const AddAmount = ({
   onAdd,
   subtotal,
@@ -67,53 +69,65 @@ const AddAmount = ({
   };
 
   return (
-    <form className="" onSubmit={onSubmit}>
-      <div className="">
-        <div className="">
-          <label htmlFor="subtotalInput">Subtotal *</label>
+    <div className="col-8">
+      <div className="form-head mb-3">
+        <TbCircle1 className="d-inline icon-tips" size="2.5em" />
+        <h3 className="d-inline">Tips and Total</h3>
+      </div>
+      <form onSubmit={onSubmit}>
+        <div className="form-group mb-3">
+          <label htmlFor="subtotalInput" className="form-label">
+            Subtotal *
+          </label>
           <input
             type="number"
             id="subtotalInput"
-            className=""
+            className="form-control"
             placeholder="$ XX.XX"
             value={subtotal}
+            required="required"
             onChange={(e) => setSubtotal(e.target.value)}
           />
         </div>
-      </div>
-      <div className="">
-        <div className="">
-          <label htmlFor="percentInput">Percent</label>
+        <div className="form-group mb-3">
+          <label htmlFor="percentInput" className="form-label">
+            Percent
+          </label>
           <input
             type="number"
             id="percentInput"
-            className=""
+            className="form-control"
             placeholder="XX %"
             value={percent}
             onChange={(e) => setPercent(e.target.value)}
           />
         </div>
-        <div className="">
-          <label htmlFor="tipAmountInput">Tip</label>
+        <div>
+          <div className="sidelines">or</div>
+        </div>
+        <div className="form-group mb-3">
+          <label htmlFor="tipAmountInput" className="form-label">
+            Tip
+          </label>
           <input
             type="number"
             id="tipAmountInput"
-            className=""
+            className="form-control"
             placeholder="$ XX.XX"
             value={tipAmount}
             onChange={(e) => setTipAmount(e.target.value)}
           />
         </div>
-      </div>
 
-      <div className="">
-        <input
-          type="submit"
-          className=""
-          value="Calculate"
-        />
-      </div>
-    </form>
+        <div className="">
+          <input
+            type="submit"
+            className="btn btn-primary btn-lg mb-3 "
+            value="Calculate"
+          />
+        </div>
+      </form>
+    </div>
   );
 };
 export default AddAmount;
