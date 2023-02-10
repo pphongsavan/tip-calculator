@@ -31,13 +31,13 @@ const CalculateTax = ({
   }, [tax, taxSubTotal, setGrandTotal]);
   return (
     <div className="col-8">
-      <div className="mb-3">
-        <h3>
-          <TbCircle2 size="1.5em" className="icon-tax" /> Tax
-        </h3>
+      <div className="mb-1">
+        <h2>
+          <TbCircle2 size="1.5rem" className="icon-tax" /> Tax
+        </h2>
       </div>
       <form>
-        <div className="form-group col-lg-4 mb-3">
+        <div className="form-group col-lg-4 mb-1">
           <label htmlFor="taxSubInput">Total *</label>
           <input
             type="number"

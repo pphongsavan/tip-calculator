@@ -67,7 +67,7 @@ function App() {
   return (
     <div>
       <Header />
-      <div className="App container">
+      <div className="App container-sm">
         <Instructions />
         <AddAmount
           amounts={amounts}
@@ -102,7 +102,7 @@ function App() {
             />
             <div className="tax-mid">
               <div className="total-zone mb-3">
-                <span className="grand-total mb-3">Grand Total:</span>
+                <h3 className="grand-total mb-3">Grand Total:</h3>
 
                 {grandTotal ? (
                   <span className="grand-total-num mb-3">

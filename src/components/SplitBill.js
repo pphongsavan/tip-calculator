@@ -30,12 +30,12 @@ const SplitBill = ({ totalToSplit, setTotalToSplit }) => {
 
   return (
     <div className="col-8">
-      <div className="mb-3">
-        <h3>
-          <TbCircle3 size="1.5em" className="icon-split" /> Split the Bill
-        </h3>
+      <div className="mb-1">
+        <h2>
+          <TbCircle3 size="1.5rem" className="icon-split" /> Split the Bill
+        </h2>
       </div>
-      <div className="form-group col-lg-4 mb-3">
+      <div className="form-group col-lg-4 mb-1">
         <label htmlFor="splitTotalInput">Grand Total *</label>
         <input
           type="number"
@@ -46,7 +46,7 @@ const SplitBill = ({ totalToSplit, setTotalToSplit }) => {
           onChange={handleChange}
         />
       </div>
-      <div className="col-lg-4 mb-3">
+      <div className="col-lg-4 mb-2">
         <label htmlFor="numPeopleInput"># of People *</label>
         <div className="input-group ">
           <input
@@ -79,8 +79,8 @@ const SplitBill = ({ totalToSplit, setTotalToSplit }) => {
           </button>
         </div>
       </div>
-      <div className="total-zone mb-3">
-        <span className="grand-total mb-3">Split: </span>
+      <div className="total-zone mb-2">
+        <h3 className="grand-total mb-3">Split: </h3>
         {splitTotal ? (
           <span className="grand-total-num">
             <b>${splitTotal}</b> <span className="grand-total">per person</span>

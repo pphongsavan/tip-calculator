@@ -10,7 +10,9 @@ const Amount = ({ amount, onDelete, onToggle, onRefill, onFillTaxSub }) => {
       <td>{amount.percent}</td>
       <td>{amount.subtotal}</td>
       <td>{amount.tipAmount}</td>
-      <td>{amount.total}</td>
+      <td>
+        <b>{amount.total}</b>
+      </td>
       <td className="icons">
         {/* </td>
         <td> */}

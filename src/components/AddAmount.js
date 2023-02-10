@@ -70,12 +70,12 @@ const AddAmount = ({
 
   return (
     <div className="col-8">
-      <div className="form-head mb-3">
-        <TbCircle1 className="d-inline icon-tips" size="2.5em" />
-        <h3 className="d-inline">Tips and Total</h3>
+      <div className="form-head mb-1">
+        <TbCircle1 className="d-inline icon-tips" size="1.5rem" />
+        <h2 className="d-inline">Tips and Total</h2>
       </div>
       <form onSubmit={onSubmit}>
-        <div className="form-group mb-3">
+        <div className="form-group mb-2">
           <label htmlFor="subtotalInput" className="form-label">
             Subtotal *
           </label>
@@ -89,7 +89,7 @@ const AddAmount = ({
             onChange={(e) => setSubtotal(e.target.value)}
           />
         </div>
-        <div className="form-group mb-3">
+        <div className="form-group mb-1">
           <label htmlFor="percentInput" className="form-label">
             Percent
           </label>
