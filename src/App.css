@@ -14,16 +14,24 @@ p {
   font-size: .8rem;
 }
 
+section.about p{
+  font-size: 1rem;
+}
+
 label {
   font-size: .8rem;
 }
 
 h1 {
-font-size: 1.4rem;
+font-size: 1.5rem;
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+h4, h5 {
   font-weight: bold;
 }
 
@@ -36,52 +44,39 @@ h2 {
 
 }
 
-.grand-total-num {
-  font-size: 1.5rem;
+.grand-total-ph {
+  align-self: center;
 }
 
-.total-zone {
+.grand-total-num {
+  font-size: 1.8rem;
+  align-self: center;
+}
+
+.total-card {
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
   border-radius: 35px;
-  height: 275px;
-  width: 75%;
-  padding: .8rem;
+  height: 225px;
+  padding: 1.5em;
   background-color: #FAF7F0;
   box-shadow: 0px 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
 }
 
-[class^="icon"] {
+.split-card {
+  height: 150px;
+}
+
+/* [class^="icon"] {
   margin-top: 5px;
   margin-bottom: 10px;
 
-}
+} */
 
 .icon-tips {
-  margin-bottom: 15px;
-  margin-right: 10px;
-}
-
-.icon-tax {
-  
-}
-
-.icon-split {
-
-}
-
-.sidelines {
-  display: flex;
-  flex-direction: row;
-}
-
-.sidelines:before,
-.sidelines:after {
-    content: "";
-    flex: 1 1;
-    border-bottom: 2px solid #000;
-    margin: auto;
+  margin-bottom: 5px;
+  margin-right: 8px;
 }
 
 #tax {
@@ -106,6 +101,6 @@ h2 {
   padding-bottom: 100px;
 }
 
-.about {
-
+.footer {
+  height: 4rem;
 }

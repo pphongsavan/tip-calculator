@@ -90,8 +90,8 @@ function App() {
         ) : (
           ""
         )}
-        <div id="tax" className="">
-          <div className="">
+        <div id="tax">
+          <div>
             <CalculateTax
               tax={tax}
               taxSubTotal={taxSubTotal}
@@ -101,25 +101,25 @@ function App() {
               setGrandTotal={setGrandTotal}
             />
             <div className="tax-mid">
-              <div className="total-zone mb-3">
-                <h3 className="grand-total mb-3">Grand Total:</h3>
+              <div className="total-card tax-card w-75 mb-3">
+                <h3 className="grand-total mb-4">Grand Total:</h3>
 
                 {grandTotal ? (
-                  <span className="grand-total-num mb-3">
+                  <span className="grand-total-num mb-5">
                     <b>${grandTotal}</b>
                   </span>
                 ) : (
-                  <span className="grand-total mb-3">
+                  <span className="grand-total-ph mb-5">
                     Not yet calculated. Fill Total and Tax above
                   </span>
                 )}
                 <button
                   title="Copy Grand Total to Split Bill form"
-                  className="btn btn-primary btn-lg"
+                  className="col-md-8 align-self-center btn btn-lg btn-primary"
                   onClick={() => fillSplitBill()}
                 >
                   <TbArrowBigDownLines />
-                  Copy Grand Total to Step 3
+                  Copy to Step 3
                 </button>
               </div>
             </div>
@@ -144,8 +144,8 @@ function App() {
             Ever feel like you're tipping too little? Or can't remember your
             calculations? With a table, all of your calculations are available
             for easy comparisons. For repetitive calculations, click the{" "}
-            <TbCircle1 /> icon in a row to re-copy that subtotal to the top
-            form.
+            <TbCircle1 size="1.4rem" /> icon in a row to re-copy that subtotal
+            to the top form.
             <br></br>
             <br></br>I was particularly inspired by an instance where the server
             was hovering over us as we tried to discuss, and we wanted to make
@@ -158,9 +158,9 @@ function App() {
             Did you know that it's perfectly acceptable to tip based on the
             pre-tax total? Most tip calculators don't take this into account. So
             I've made the tax addition a separate step after. For fast
-            calculations, click the <TbCircle2 /> icon in a row to copy the
-            total to this form. Then you can go further and split the bill if
-            needed.
+            calculations, click the <TbCircle2 size="1.4rem" /> icon in a row to
+            copy the total to this form. Then you can go further and split the
+            bill if needed.
           </p>
         </section>
 
