@@ -69,65 +69,69 @@ const AddAmount = ({
   };
 
   return (
-    <div className="col-9">
-      <div className="form-head mb-1">
-        <TbCircle1 className="d-inline icon-tips" size="1.8rem" />
-        <h2 className="d-inline">Tips and Total</h2>
-      </div>
-      <form onSubmit={onSubmit}>
-        <div className="form-group mb-2">
-          <label htmlFor="subtotalInput" className="form-label">
-            Subtotal *
-          </label>
-          <input
-            type="number"
-            id="subtotalInput"
-            className="form-control"
-            placeholder="$ XX.XX"
-            value={subtotal}
-            required="required"
-            onChange={(e) => setSubtotal(e.target.value)}
-          />
+    <div className="row justify-content-center">
+      <div className="col-9 col-sm-8">
+        <div className="form-head mb-1">
+          <TbCircle1 className="d-inline icon-tips" size="1.8rem" />
+          <h2 className="d-inline">Tips and Total</h2>
         </div>
-        <div className="row">
-          <div className="form-group col mb-1">
-            <label htmlFor="percentInput" className="form-label">
-              Percent
+        <form onSubmit={onSubmit}>
+          <div className="form-group mb-2">
+            <label htmlFor="subtotalInput" className="form-label">
+              Subtotal *
             </label>
             <input
               type="number"
-              id="percentInput"
-              className="form-control"
-              placeholder="XX %"
-              value={percent}
-              onChange={(e) => setPercent(e.target.value)}
-            />
-          </div>
-
-          <div className="col-2 align-self-center">OR</div>
-          <div className="form-group col mb-3">
-            <label htmlFor="tipAmountInput" className="form-label">
-              Tip
-            </label>
-            <input
-              type="number"
-              id="tipAmountInput"
+              id="subtotalInput"
               className="form-control"
               placeholder="$ XX.XX"
-              value={tipAmount}
-              onChange={(e) => setTipAmount(e.target.value)}
+              value={subtotal}
+              required="required"
+              onChange={(e) => setSubtotal(e.target.value)}
             />
           </div>
-        </div>
+          <div className="row">
+            <div className="form-group col mb-1">
+              <label htmlFor="percentInput" className="form-label">
+                Percent
+              </label>
+              <input
+                type="number"
+                id="percentInput"
+                className="form-control"
+                placeholder="XX %"
+                value={percent}
+                onChange={(e) => setPercent(e.target.value)}
+              />
+            </div>
 
-        <div>
-          <input
-            type="submit"
-            className="btn btn-primary btn-lg mb-3"
-            value="Calculate"
-          />
-        </div>
-      </form>
+            <div className="col-1 d-flex justify-content-center align-items-center">
+              <div>OR</div>
+            </div>
+            <div className="form-group col mb-3">
+              <label htmlFor="tipAmountInput" className="form-label">
+                Tip
+              </label>
+              <input
+                type="number"
+                id="tipAmountInput"
+                className="form-control"
+                placeholder="$ XX.XX"
+                value={tipAmount}
+                onChange={(e) => setTipAmount(e.target.value)}
+              />
+            </div>
+          </div>
+
+          <div className="d-flex justify-content-center">
+            <input
+              type="submit"
+              className="btn btn-primary btn-lg mb-3"
+              value="Calculate"
+            />
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
