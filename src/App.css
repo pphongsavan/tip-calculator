@@ -1,10 +1,5 @@
 .App {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  /* --color-one: #CDFCF6;
-  --color-two: #BCCEF8;  */
-  --color-one: #ffffff;
-  --color-two: #ffffff; 
-  --dark: #333;
 }
 
   
@@ -71,23 +66,7 @@ h4, h5 {
   margin-right: 8px;
 }
 
-.bg-tax {
-  background: var(--color-one);
-
-}
-
-.bg-tax-mid {
-  background: linear-gradient(
-  to bottom,
-  var(--color-one) 0%,
-  var(--color-one) 70%,
-  var(--color-two) 70%,
-  var(--color-two) 100%
-  );
-}
-
 .bg-split {
-  background: var(--color-two);
   padding-bottom: 100px;
 }
 
