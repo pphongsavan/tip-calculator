@@ -1,13 +1,10 @@
 .App {
-  /* text-align: center;
-  justify-content: center; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   /* --color-one: #CDFCF6;
   --color-two: #BCCEF8;  */
   --color-one: #ffffff;
   --color-two: #ffffff; 
   --dark: #333;
-  /* padding: 0; */
 }
 
   
@@ -59,22 +56,15 @@ h4, h5 {
   flex-direction: column;
   word-wrap: break-word;
   border-radius: 35px;
-  height: 225px;
+  min-height: 225px;
   padding: 1.5em;
   background-color: #FAF7F0;
-  box-shadow: 0px 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .split-card {
-  height: 150px;
+  min-height: 150px;
 }
-
-
-/* [class^="icon"] {
-  margin-top: 5px;
-  margin-bottom: 10px;
-
-} */
 
 .icon-tips {
   margin-bottom: 5px;
@@ -94,8 +84,6 @@ h4, h5 {
   var(--color-two) 70%,
   var(--color-two) 100%
   );
-  display: flex;
-
 }
 
 .bg-split {
@@ -105,7 +93,7 @@ h4, h5 {
 
 .bg-footer {
   background: black;
-  color: #FAF7F0;
+  color: #b4afa6;
   padding-top: 2em;
 }
 

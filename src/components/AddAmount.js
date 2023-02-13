@@ -12,12 +12,6 @@ const AddAmount = ({
   const onSubmit = (e) => {
     e.preventDefault();
 
-    // Need Subtotal & Percent OR Tip to accept
-    // and calculate
-    // CANNOT ACCEPT:
-    // Sub is blank
-    // Sub is filled, but percent AND tip are blank
-    // All fields are filled
     if (
       !subtotal ||
       (subtotal && percent && tipAmount) ||
@@ -76,7 +70,7 @@ const AddAmount = ({
           <h2 className="d-inline">Tips and Total</h2>
         </div>
         <form onSubmit={onSubmit}>
-          <div className="form-group mb-2">
+          <div className="form-group col col-md-7 mb-2">
             <label htmlFor="subtotalInput" className="form-label">
               Subtotal *
             </label>
@@ -90,8 +84,8 @@ const AddAmount = ({
               onChange={(e) => setSubtotal(e.target.value)}
             />
           </div>
-          <div className="row">
-            <div className="form-group col mb-1">
+          <div className="row g-0">
+            <div className="form-group col col-md-3 mb-1">
               <label htmlFor="percentInput" className="form-label">
                 Percent
               </label>
@@ -105,10 +99,10 @@ const AddAmount = ({
               />
             </div>
 
-            <div className="col-1 d-flex justify-content-center align-items-center">
+            <div className="col col-md-1 d-flex justify-content-center align-items-center">
               <div>OR</div>
             </div>
-            <div className="form-group col mb-3">
+            <div className="form-group col col-md-3 mb-3">
               <label htmlFor="tipAmountInput" className="form-label">
                 Tip
               </label>
@@ -124,11 +118,13 @@ const AddAmount = ({
           </div>
 
           <div className="d-flex justify-content-center">
-            <input
-              type="submit"
-              className="btn btn-primary btn-lg mb-3"
-              value="Calculate"
-            />
+            <div className="col-md-7">
+              <input
+                type="submit"
+                className="btn btn-primary btn-lg mb-3"
+                value="Calculate"
+              />
+            </div>
           </div>
         </form>
       </div>

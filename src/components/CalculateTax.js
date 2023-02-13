@@ -38,7 +38,7 @@ const CalculateTax = ({
           </h2>
         </div>
         <form className="row ">
-          <div className="form-group col mb-1">
+          <div className="form-groupc col col-md-3 mb-1">
             <label htmlFor="taxSubInput">Total *</label>
             <input
               type="number"
@@ -49,7 +49,7 @@ const CalculateTax = ({
               onChange={handleChange}
             />
           </div>
-          <div className="form-group col mb-3">
+          <div className="form-group col col-md-3 mb-3">
             <label htmlFor="taxInput">Tax *</label>
             <input
               type="number"

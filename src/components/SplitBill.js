@@ -36,6 +36,7 @@ const SplitBill = ({ totalToSplit, setTotalToSplit }) => {
             <TbCircle3 size="1.8rem" className="icon-split" /> Split the Bill
           </h2>
         </div>
+
         <div className="row">
           <div className="form-group col col-md-3">
             <label htmlFor="splitTotalInput">Grand Total *</label>
@@ -48,7 +49,7 @@ const SplitBill = ({ totalToSplit, setTotalToSplit }) => {
               onChange={handleChange}
             />
           </div>
-          <div className="col col-md-3 mb-4">
+          <div className="col col-md-3 mb-3">
             <label htmlFor="numPeopleInput"># of People *</label>
             <div className="input-group">
               <input
@@ -98,8 +99,7 @@ const SplitBill = ({ totalToSplit, setTotalToSplit }) => {
                 </span>
               ) : (
                 <span className="grand-total-ph">
-                  Split not calculated yet. Fill Grand Total and # of People
-                  above.
+                  Not calculated yet. Fill Grand Total and # of People above.
                 </span>
               )}
             </div>

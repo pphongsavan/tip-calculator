@@ -108,9 +108,9 @@ function App() {
             </div>
 
             <div className="bg-tax-mid">
-              <div className="tax-mid container">
+              <div className="container">
                 <div className="row justify-content-center">
-                  <div className="col col-md-8">
+                  <div className="col col-md-8 d-flex justify-content-center">
                     <div className="total-card tax-card w-75 mb-3">
                       <h3 className="grand-total mb-4">Grand Total:</h3>
 
@@ -120,7 +120,7 @@ function App() {
                         </span>
                       ) : (
                         <span className="grand-total-ph mb-5">
-                          Not yet calculated. Fill Total and Tax above
+                          Not calculated yet. Fill Total and Tax above.
                         </span>
                       )}
                       <button
@@ -154,7 +154,8 @@ function App() {
             <section className="col-md-9">
               <h4>About This Calculator:</h4>
               <p>
-                Calculating tips takes too many taps. I wanted to make it as
+                Calculating tips, especially when you're not sure how much you
+                want to tip yet, takes too many taps. I wanted to make it as
                 quick as possible.
               </p>
               <h5>Why a table?</h5>
